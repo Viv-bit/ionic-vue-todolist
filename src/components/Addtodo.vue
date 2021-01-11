@@ -1,38 +1,30 @@
 <template>
-  <form>
-    <ion-item >
-      <ion-label position="floating"> Add Task Title: </ion-label>
-      <ion-input type="text" required />
-    </ion-item>
-
-    <ion-item >
-      <ion-label position="floating"> Add Task Detail: </ion-label>
-      <ion-input type="text" required />
-    </ion-item>
-    <ion-button>Add</ion-button>
-  </form>
+  <todo-form  @save-todo="saveTodo"></todo-form>
 </template>
 
 <script>
-import { IonInput, IonLabel, IonItem, IonButton } from '@ionic/vue'
+import TodoForm from './TodoForm.vue';
+
 
 export default {
-  
+  emits: ["save-todo"],
   components: {
-    IonInput,
-    IonLabel,
-    IonItem,
-    IonButton
+    TodoForm
+    
   },
+  
   methods: {
-    addTodo(newTodo) {
-      this.$store.dispatch('addTodo', newTodo);
-    },
+    // addTodo(newTodo) {
+    //   this.$store.dispatch('addTodo', newTodo);
+    // },
 
     saveTodo(todoData) {
+      console.log('saveTodo',todoData);
       this.$store.dispatch('addTodo', todoData);
       this.$router.replace('/todos');
-    }
+    },
+    
+    
   },
   
   

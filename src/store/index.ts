@@ -3,27 +3,27 @@ import { createStore } from 'vuex' ;
 const store = createStore<any>({
     state() {
         return{
-                todo: [
+                todos: [
                     {
-                        id: "a1",
+                        id: 1,
                         title: "work",
                         detail: "Write Article"
                     },
 
                     {
-                        id: "a2",
+                        id: 2,
                         title: "selfcare",
                         detail: "Yoga"
                     },
 
                     {
-                        id: "a3",
+                        id: 3,
                         title: "work",
                         detail: "Finish Home Page"
                     },
 
                     {
-                        id: "a4",
+                        id: 4,
                         title: "selfcare",
                         detail: "Meditate"
                     }
@@ -52,8 +52,14 @@ const store = createStore<any>({
     getters: {
         todos(state) {
             return state.todos;
-        }
-    }
+        },
+        todo(state) {
+            return (todoId: any) => {
+              return state.todos.find((todo: any) => todo.id === todoId);
+            };
+          },
+    },
+   
 });
 
 export default store;
