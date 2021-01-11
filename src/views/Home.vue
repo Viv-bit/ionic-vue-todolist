@@ -7,22 +7,20 @@
     </ion-header>
     
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">TodoList</ion-title>
-        </ion-toolbar>
-      </ion-header>
     
       <div id="container">
+
         <strong>What is your first task of the day?</strong>
         <p>Start with a cup of tea or water.</p>
+        <p>Tomorrow starts from tonight, sleep early and set your tasks before bed.</p>
       </div>
     </ion-content>
+    <ion-button href="/todolist" expand="block">Check your daily task</ion-button>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -32,7 +30,8 @@ export default defineComponent({
     IonHeader,
     IonPage,
     IonTitle,
-    IonToolbar
+    IonToolbar,
+    IonButton
   }
 });
 </script>
