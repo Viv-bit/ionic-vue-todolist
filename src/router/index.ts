@@ -9,17 +9,19 @@ const routes: Array<RouteRecordRaw> = [
  
   {
     path: '/',
-    name: 'Home',
+    redirect: '/home',
+  },
+  {
+    path: '/home',
     component: Home
   },
   {
-    path: '/',
-    redirect: '/todolist'
+    path: '/todolist',
+    component: () => import('../views/Todolist.vue')
   },
   {
-    path: '/todolist',
-    name: 'Todolist',
-    component: Todolist
+    path: '/addtodo',
+    component: () => import('../components/Addtodo.vue')
   }
 ]
 

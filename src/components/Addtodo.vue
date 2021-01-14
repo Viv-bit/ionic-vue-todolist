@@ -1,5 +1,8 @@
 <template>
-  <todo-form  @save-todo="saveTodo"></todo-form>
+  <ion-page>
+    <todo-form  @save-todo="saveTodo"></todo-form>
+    <ion-button page-default-back-link="/todolist" expand="block">Back to List</ion-button>
+  </ion-page>
 </template>
 
 <script>
@@ -14,9 +17,9 @@ export default {
   },
   
   methods: {
-    // addTodo(newTodo) {
-    //   this.$store.dispatch('addTodo', newTodo);
-    // },
+    addTodo(newTodo) {
+      this.$store.dispatch('addTodo', newTodo);
+    },
 
     saveTodo(todoData) {
       console.log('saveTodo',todoData);

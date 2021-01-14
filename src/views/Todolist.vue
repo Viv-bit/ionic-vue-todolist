@@ -1,42 +1,44 @@
 <template>
     <ion-page>
-        <Addtodo />
-
         <ion-list>
             <ion-item
                 v-for="todo in todos"
                 :router-link="`/todos/${todo.id}`"
                 :key="todo.id"
             >
-            <div>
-                <strong>
-                    {{ todo.title }}
-                </strong>
+                <div>
+                    <strong>
+                        {{ todo.title }}
+                    </strong>
 
-                <p>
-                    {{ todo.detail }}
-                </p>
-            </div>
+                    <p>
+                        {{ todo.detail }}
+                    </p>
+                </div>
           
             </ion-item>
+            
+                <ion-button router-link='/addtodo'>
+                    Add new todo
+                </ion-button>
+            
         </ion-list>
 
         
 
-            <ion-button href="/" expand="block">Back to Home</ion-button>
+            <ion-button router-link="/home" expand="block">Back to Home</ion-button>
         
     </ion-page>
 </template>
 
 <script>
-import { IonList, IonItem } from '@ionic/vue'
-import Addtodo from '../components/Addtodo'
+import { IonList, IonItem, IonButton } from '@ionic/vue'
 export default {
     props: ["todo"],
     components: {
         IonList,
         IonItem,
-        Addtodo
+        IonButton
     },
 
     computed: {

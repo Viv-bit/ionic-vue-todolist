@@ -36,7 +36,7 @@ export default {
         title: this.enteredTitle,
         detail: this.enteredDetail
       };
-      console.log('submitForm',todoData);
+      console.log("this.submitForm", todoData)
       this.$emit('save-todo', todoData);
   }
   }

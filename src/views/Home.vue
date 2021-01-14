@@ -15,12 +15,16 @@
         <p>Tomorrow starts from tonight, sleep early and set your tasks before bed.</p>
       </div>
     </ion-content>
-    <ion-button href="/todolist" expand="block">Check your daily task</ion-button>
+    <ion-router>
+      <ion-route url="/todolist" component="Todolist">
+        <ion-button>Check your daily task</ion-button>
+      </ion-route>
+    </ion-router>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonRouter } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
